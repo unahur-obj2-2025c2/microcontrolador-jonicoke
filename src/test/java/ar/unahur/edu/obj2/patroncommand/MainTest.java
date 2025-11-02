@@ -1,12 +1,13 @@
 package ar.unahur.edu.obj2.patroncommand;
 
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.jupiter.api.Test;
-
 public class MainTest {
+
     @Test
     void testMain() {
-        assertTrue(Boolean.TRUE);
+        assertTrue(true);
     }
+
 }

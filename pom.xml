@@ -22,6 +22,7 @@
     </dependencies>
     <build>
         <plugins>
+
             <!-- Plugin de Maven Surefire para ejecutar pruebas -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -34,11 +35,21 @@
                 </configuration>
             </plugin>
 
+
             <!-- Plugin de JaCoCo -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.10</version> <!-- Usa la última versión disponible -->
+                <configuration>
+                    <excludes>
+                        <!-- Excluye cualquier clase que empiece con Main -->
+                        <exclude>*/Main.class</exclude>
+                        <!-- O si querés todas las clases dentro de un paquete "app" -->
+                        <exclude>*/app/*</exclude>
+                    </excludes>
+                </configuration>
+
                 <executions>
                     <execution>
                         <goals>
