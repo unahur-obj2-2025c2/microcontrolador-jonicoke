@@ -2,7 +2,7 @@ package ar.unahur.edu.obj2.patroncommand.operaciones;
 
 import ar.unahur.edu.obj2.patroncommand.Programable;
 
-public class Lod implements IOperable{
+public class Lod extends Comando {
     private Integer addr;
     public Lod(Integer addr) {
         super();
@@ -10,11 +10,10 @@ public class Lod implements IOperable{
     }
 
     @Override
-    public void execute(Programable micro) {
+    public void DoExecute(Programable micro) {
         micro.setAddr(addr);
         Integer value = micro.getMemory().get(micro.getAddr());
         micro.setAcumuladorA(value);
-        micro.incProgramCounter();
     }
 
 }
